@@ -1,0 +1,64 @@
+{
+  "name": "env-typecheck",
+  "version": "1.0.0",
+  "description": "Type-safe environment variables with Zod — for Express, NestJS and any TypeScript project",
+  "author": "Alireza-ghasemi",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./nestjs": {
+      "types": "./dist/nestjs/index.d.ts",
+      "import": "./dist/nestjs/index.mjs",
+      "require": "./dist/nestjs/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "examples",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts src/nestjs/index.ts --format cjs,esm --dts --clean",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "dev": "tsup --watch"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "zod": "^3.22.0"
+  },
+  "peerDependencies": {
+    "@nestjs/common": ">=9.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@nestjs/common": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@nestjs/common": "^11.1.26",
+    "@types/node": "^20.0.0",
+    "reflect-metadata": "^0.1.13",
+    "tsup": "^8.0.0",
+    "typescript": "^5.0.0",
+    "vitest": "^4.1.8"
+  },
+  "keywords": [
+    "env",
+    "environment",
+    "zod",
+    "nestjs",
+    "express",
+    "typescript",
+    "type-safe",
+    "validation",
+    "config"
+  ]
+}
