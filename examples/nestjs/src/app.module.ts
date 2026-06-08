@@ -1,5 +1,5 @@
 import { Module } from "@nestjs/common";
-import { EnvModule } from "env-typecheck/nestjs";
+import { EnvModule } from "@alireza_ghasemi/env-typecheck/nestjs";
 import { AppController } from "./app.controller";
 import { AppService } from "./app.service";
 import { envSchema } from "./env.schema";

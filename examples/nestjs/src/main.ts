@@ -1,6 +1,6 @@
 import "reflect-metadata";
 import { NestFactory } from "@nestjs/core";
-import { EnvService } from "env-typecheck/nestjs";
+import { EnvService } from "@alireza_ghasemi/env-typecheck/nestjs";
 import { AppModule } from "./app.module";
 import { envSchema } from "./env.schema";
 

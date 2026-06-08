@@ -1,5 +1,5 @@
 {
-  "name": "env-typecheck",
+  "name": "@alireza_ghasemi/env-typecheck",
   "version": "1.0.0",
   "description": "Type-safe environment variables with Zod — for Express, NestJS and any TypeScript project",
   "author": "Alireza-ghasemi",

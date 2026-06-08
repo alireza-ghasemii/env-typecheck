@@ -28,11 +28,11 @@ Benefits:
 ## Installation
 
 ```bash
-npm install env-typecheck zod dotenv
+npm install @alireza_ghasemi/env-typecheck zod dotenv
 ```
 
 `zod` and `dotenv` are regular dependencies of this package, so installing
-`env-typecheck` is enough for most npm setups. They are shown above because most
+`@alireza_ghasemi/env-typecheck` is enough for most npm setups. They are shown above because most
 projects also import `z` directly in their own schema files.
 
 For NestJS usage, your application should already have Nest installed:
@@ -44,7 +44,7 @@ npm install @nestjs/common @nestjs/core reflect-metadata rxjs
 ## Quick Start
 
 ```ts
-import { createEnv, z } from "env-typecheck";
+import { createEnv, z } from "@alireza_ghasemi/env-typecheck";
 
 export const env = createEnv(
   z.object({
@@ -73,7 +73,7 @@ Create a small env file and import it wherever configuration is needed.
 
 ```ts
 // src/env.ts
-import { createEnv, z } from "env-typecheck";
+import { createEnv, z } from "@alireza_ghasemi/env-typecheck";
 
 export const envSchema = z.object({
   NODE_ENV: z.enum(["development", "test", "production"]).default("development"),
@@ -101,7 +101,7 @@ See the runnable example in [`examples/express`](examples/express).
 
 ```ts
 import express from "express";
-import { createEnv, z } from "env-typecheck";
+import { createEnv, z } from "@alireza_ghasemi/env-typecheck";
 
 const env = createEnv(
   z.object({
@@ -131,12 +131,12 @@ it later in your application.
 
 ## NestJS Usage
 
-NestJS support is exported from the `env-typecheck/nestjs` subpath.
+NestJS support is exported from the `@alireza_ghasemi/env-typecheck/nestjs` subpath.
 See the runnable example in [`examples/nestjs`](examples/nestjs).
 
 ```ts
 // src/env.schema.ts
-import { z } from "env-typecheck";
+import { z } from "@alireza_ghasemi/env-typecheck";
 
 export const envSchema = z.object({
   NODE_ENV: z.enum(["development", "test", "production"]).default("development"),
@@ -151,7 +151,7 @@ Register the module in your root module:
 ```ts
 // src/app.module.ts
 import { Module } from "@nestjs/common";
-import { EnvModule } from "env-typecheck/nestjs";
+import { EnvModule } from "@alireza_ghasemi/env-typecheck/nestjs";
 import { envSchema } from "./env.schema";
 
 @Module({
@@ -171,7 +171,7 @@ Inject the typed service:
 ```ts
 // src/app.service.ts
 import { Injectable } from "@nestjs/common";
-import { EnvService } from "env-typecheck/nestjs";
+import { EnvService } from "@alireza_ghasemi/env-typecheck/nestjs";
 import { envSchema } from "./env.schema";
 
 @Injectable()
@@ -206,7 +206,7 @@ operation.
 
 ```ts
 import { Module } from "@nestjs/common";
-import { EnvModule } from "env-typecheck/nestjs";
+import { EnvModule } from "@alireza_ghasemi/env-typecheck/nestjs";
 import { envSchema } from "./env.schema";
 
 @Module({
@@ -232,7 +232,7 @@ You can also inject the parsed object directly.
 
 ```ts
 import { Inject, Injectable } from "@nestjs/common";
-import { ENV_CONFIG, EnvConfig } from "env-typecheck/nestjs";
+import { ENV_CONFIG, EnvConfig } from "@alireza_ghasemi/env-typecheck/nestjs";
 import { envSchema } from "./env.schema";
 
 @Injectable()
@@ -398,8 +398,8 @@ npm pack --dry-run
 The package exports:
 
 ```ts
-import { createEnv, z } from "env-typecheck";
-import { EnvModule, EnvService } from "env-typecheck/nestjs";
+import { createEnv, z } from "@alireza_ghasemi/env-typecheck";
+import { EnvModule, EnvService } from "@alireza_ghasemi/env-typecheck/nestjs";
 ```
 
 ## License

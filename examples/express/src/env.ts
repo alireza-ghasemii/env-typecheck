@@ -1,4 +1,4 @@
-import { createEnv, z } from "env-typecheck";
+import { createEnv, z } from "@alireza_ghasemi/env-typecheck";
 
 export const envSchema = z.object({
   NODE_ENV: z.enum(["development", "test", "production"]).default("development"),

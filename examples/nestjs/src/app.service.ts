@@ -1,5 +1,5 @@
 import { Injectable } from "@nestjs/common";
-import { EnvService } from "env-typecheck/nestjs";
+import { EnvService } from "@alireza_ghasemi/env-typecheck/nestjs";
 import { envSchema } from "./env.schema";
 
 @Injectable()
